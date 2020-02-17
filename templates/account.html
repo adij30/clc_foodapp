@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bank Account</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<body>
+{% set BASE_URL = 'http://localhost:5000' %}
+<div class="container">
+<form class="form-horizontal" action="{{BASE_URL}}/app/account/save/" method="post">
+
+<h3>{{object_data.name}} Fill up Your Account Details   </h3><br>
+
+
+<!-- hidden Text input Customer ID or hotel ID read only for transactional table-->
+<input name="id" type="hidden" value="{{object.id}}">
+<input name="objecttype" type="hidden" value="{{object_type}}">
+
+
+
+<!-- Text input Account No-->
+    {% if object_data %}
+    <!-- account backref is used here in value -->
+<div class="form-group">
+<label class="control-label col-sm-2" for="textinput">Account No</label>
+    <div class="col-sm-2">
+        <input id="" maxlength="6" minlength="6" name="acc_no" type="text" readonly
+               value="{{object_data.account.accno}}" class="form-control input-md"  >
+        <span class="help-block">  6 digit Bank Account no</span>
+    </div>
+ </div>
+    {% else %}
+<div class="form-group">
+<label class="control-label col-sm-2" for="textinput">Account No</label>
+    <div class="col-sm-2">
+        <input id="" maxlength="6" minlength="6" name="acc_no" type="text" placeholder="Enter Account No"
+              class="form-control input-md"  >
+        <span class="help-block">Enter youe 6 digit Bank Account no</span>
+    </div>
+ </div>
+    {% endif %}
+
+
+
+<!-- Text input BALANCE-->
+    {% if object_data %}
+<div class="form-group">
+<label class="control-label col-sm-2" for="textinput">Balance</label>
+     <div class="col-sm-2">
+     <input id="" name="acc_balance" type="text" class="form-control input-md"
+            value="{{object_data.account.balance}}">
+     </div>
+</div>
+    {% else %}
+<div class="form-group">
+<label class="control-label col-sm-2" for="textinput">Balance</label>
+     <div class="col-sm-2">
+     <input id="" name="acc_balance" type="text" placeholder="Enter Your Balance"
+             class="form-control input-md" required=""  >
+     </div>
+</div>
+     {% endif %}
+
+
+
+<!-- Select Account TYPE  -->
+    {% if object_data %}
+<div class="form-group">
+<label class="col-md-2 control-label" for="selectbasic">Select Account Type</label>
+    <div class="col-md-2">
+    <select  name="acc_type" class="form-control">
+        {% for type in account_types %}
+        <option value="{{type}}">{{type}}</option>
+        {% endfor %}
+    </select>
+    </div>
+</div>
+    {% else %}
+<div class="form-group">
+<label class="col-md-2 control-label" for="selectbasic">Select Account Type</label>
+    <div class="col-md-2">
+    <select id="selectbasic" name="acc_type" class="form-control">
+        {% for type in account_types %}
+        <option value="{{type}}">{{type}}</option>
+        {% endfor %}
+    </select>
+    </div>
+</div>
+    {% endif  %}
+
+
+<!-- Button -->
+    {% if object_data %}
+<div class="form-group">
+<label class="col-md-2 control-label" for="singlebutton"></label>
+    <div class="col-md-4">
+        <button id="singlebutton" name="add" class="btn btn-success">Update</button>
+    </div>
+</div>
+    {% else %}
+<div class="form-group">
+<label class="col-md-2 control-label" for="singlebutton"></label>
+    <div class="col-md-4">
+        <button id="singlebutton" name="add" class="btn btn-success">Add</button>
+    </div>
+</div>
+    {% endif %}
+
+
+
+</form>
+</div>
+
+
+</body>
+</html>

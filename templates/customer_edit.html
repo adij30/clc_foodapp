@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{customerobject.name}}'s profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<body>
+{% set BASE_URL = 'http://localhost:5000' %}
+
+
+<form class="form-horizontal" action="{{BASE_URL}}/app/customer/update/" method="post">
+<fieldset>
+
+
+<!-- Form Name -->
+<legend align="center">Update Profile</legend>
+
+
+<!-- Text input ID-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">ID</label>
+  <div class="col-md-2">
+  <input id="" name="cid" type="text" class="form-control input-md"
+           value="{{customerobject.id}}" readonly>
+  </div>
+</div>
+
+
+<!-- Text input Name-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Name</label>
+  <div class="col-md-2">
+  <input id="" name="cname" type="text" class="form-control input-md"
+         required="" value="{{customerobject.name}}">
+  </div>
+</div>
+
+
+<!-- Text input Age-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Age</label>
+  <div class="col-md-2">
+  <input id="" name="cage" maxlength="2" type="text" class="form-control input-md"
+         required="" value="{{customerobject.age}}">
+  </div>
+</div>
+
+
+<!-- Text input Email-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Email</label>
+  <div class="col-md-2">
+  <input id="textinput" name="cemail" type="text" minlength="6" class="form-control input-md"
+         required="" value="{{customerobject.email}}">
+  </div>
+</div>
+
+
+<!-- Text input Mobile no with +91-->
+<div class="form-group">
+    <label class="col-md-2 control-label" for="textinput">Mobile no</label>
+    <div class="input-group col-md-2">
+    <span class="input-group-addon" id="sizing-addon2">+91</span>
+    <input type="text" name="cmobileno" class="form-control input-md" aria-describedby="sizing-addon2"
+           maxlength="10" minlength="10" required="" value="{{customerobject.mobile_no}}">
+    </div>
+</div>
+
+
+<!-- Password input password-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="passwordinput">Password </label>
+  <div class="col-md-2">
+    <input id="" name="cpassword1" minlength="6" maxlength="6" type="password" class="form-control input-md"
+            required="" value="{{customerobject.password}}">
+    <span class="help-block">length must be exact 6 digit</span>
+  </div>
+</div>
+
+
+<!-- Password input comfirm password-->
+<div class="form-group">
+  <label class="control-label col-md-2 " for="passwordinput">Confirm Password </label>
+  <div class="col-md-2">
+    <input id="" name="cpassword2" minlength="6" maxlength="6" type="password" class="form-control input-md"
+           onkeyup='check();' required="" value="{{customerobject.password}}">
+     <span id='message'></span>
+  </div>
+</div>
+
+
+<!-- script for password match -->
+<script>
+   var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Password Match...';
+    document.getElementById('submit').disabled = false;
+
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password Dont Match...';
+    document.getElementById('submit').disabled = true;
+  }
+}
+</script>
+
+
+
+<!-- Button sign up-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="singlebutton"></label>
+  <div class="col-md-2">
+    <button id="submit" name="update" class="btn btn-primary">Update</button>
+  </div>
+</div>
+
+
+</fieldset>
+</form>
+
+
+</body>
+</html>

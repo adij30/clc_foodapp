@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Welcome {% if hotelobject %} Hotel {{hotelobject.name}}  {% endif %}</title>
+<style>
+.vertical-menu {
+  width: 200px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h1 align="center">Welcome {{hotelobject.name}}  ...</h1>
+
+<!--alert when user update profile  -->
+{% if flag== 'update' or flag=='account_added'   %}
+<div class="form-group">
+<div class="alert alert-success  col-md-4">
+  <label class="col-md-12 control-label"> <strong>{{msg}}</strong></label>
+</div>
+</div>
+{% endif %}
+
+<div class="vertical-menu">
+  <a href="#" class="active">Home</a>
+  <a href="/app/hotel/edit/{{hotelobject.id}}">Profile</a>
+  <a href="/app/hotel/menu/{{hotelobject.id}}">Menu</a>
+
+   {% if account  %}
+   <a href="/app/hotel/account/{{hotelobject.id}}">Edit Bank Details</a>
+   {% else %}
+   <a href="/app/hotel/account/{{hotelobject.id}}">Add Bank Details</a>
+   {% endif %}
+
+
+  <a href="/app/hotel/orders/{{hotelobject.id}}">Orders</a>
+  <a href="/app/hotel/logout/{{hotelobject.name}}">Log out</a>
+</div>
+
+
+</body>
+</html>

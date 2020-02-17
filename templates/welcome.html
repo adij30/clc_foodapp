@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome to CLC </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+
+<div class="container">
+  <h2>Welcome to CLC Food Court</h2><br>
+
+  <a href="/app/customer/login/" class="btn btn-primary" role="button">Customer Log IN</a>
+  <a href="/app/hotel/login/" class="btn btn-primary" role="button">Hotel Log IN</a>
+
+</div>
+<br><br>
+
+  <!--alert when user do logout   -->
+{% if flag=='user_logout' or flag=='hotel_logout' %}
+    <div class="form-group">
+    <div class="alert alert-success  col-md-3">
+      <label class="col-md12 control-label"> <strong>{{notification}}</strong></label>
+    </div>
+    </div>
+{% endif %}
+
+</body>
+</html>

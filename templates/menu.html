@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <title>{{hotelobject.name}} Menu</title>
+</head>
+
+<style>
+.vertical-menu {
+  width: 100px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+<body>
+
+
+
+<div class="vertical-menu">
+  <a href="/app/hotel/log_in_page/{{hotelobject.id}}" class="active">Home</a>
+</div>
+
+{% set BASE_URL = 'http://localhost:5000' %}
+
+<div class="container">
+  <h5>{{hotelobject.name}} can add menu here</h5><br>
+  <form class="form-inline" action="{{BASE_URL}}/app/hotel/menu/add/" method="post">
+
+  <input type="hidden" name="hid" value="{{hotelobject.id}}">
+
+{% if menu %}
+ <div class="form-group">
+    <input type="hidden" class="form-control"  value="{{menu.id}}" name="mid">
+ </div>
+{%else%}
+ <div class="form-group">
+    <input type="hidden" class="form-control"  placeholder="Enter email" name="mid">
+ </div>
+{% endif %}
+
+ {% if menu %}
+<div class="form-group">
+ <label >Menu Name:</label>&nbsp&nbsp&nbsp
+ <input  class="form-control"  value="{{menu.name}}" name="mname">
+</div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+{%else%}
+<div class="form-group">
+<label >Menu Name:</label>&nbsp&nbsp&nbsp
+<input  class="form-control"  placeholder="Enter Menu Name" name="mname">
+</div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+{% endif %}
+
+{% if menu %}
+ <div class="form-group">
+ <label >Menu Price:</label>&nbsp&nbsp&nbsp
+ <input  class="form-control"  value="{{menu.price}}" name="mprice">
+ </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+{%else%}
+ <div class="form-group">
+ <label >Menu Price:</label>&nbsp&nbsp&nbsp
+ <input  class="form-control"  placeholder="Enter Menu Price" name="mprice">
+ </div>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+{% endif %}
+
+{% if menu %}
+<button type="add" class="btn btn-primary">Update</button>
+{% else %}
+<button type="add" class="btn btn-primary">Add</button>
+{% endif %}
+
+  </form>
+</div>
+<br>
+
+{% if msg %}
+<div class="alert alert-success">
+    <strong>{{msg}}</strong>
+</div>
+{% endif %}
+
+
+<div class="container">
+  <table class=" table-bordered table-sm table-striped table-hover">
+    <thead>
+      <tr class="bg-success">
+        <th style="width:10%">ID</th>
+        <th style="width:20%">Name</th>
+        <th style="width:20%">Price</th>
+        <th style="width:50%">Action</th>
+      </tr>
+    </thead>
+      {% if menus %}
+      {% for menu in menus %}
+    <tbody>
+      <tr >
+        <td>{{menu.id}} </td>
+        <td> {{menu.name}}</td>
+        <td> {{menu.price}} &#8377</td>
+        <td>
+                <a href="/app/hotel/menu/edit/{{menu.id}}">EDIT</a>
+                <a href="/app/hotel/menu/delete/{{menu.id}}">DELETE</a>
+        </td>
+      </tr>
+    </tbody>
+      {% endfor %}
+      {% endif%}
+  </table>
+</div>
+
+
+
+</body>
+</html>

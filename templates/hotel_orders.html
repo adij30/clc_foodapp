@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>{{hotelobject.name }} </title>
+    <style>
+mark {
+  background-color: grey;
+  color: white;
+}
+
+.vertical-menu {
+  width: 100px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+<div class="vertical-menu">
+  <a href="/app/hotel/log_in_page/{{hotelobject.id}}" class="active">Home</a>
+</div>
+<h3 align="center">{{hotelobject.name }} Orders</h3>
+
+
+
+<br><br>
+
+<div class="container">
+    {% if hotel_orders_objects %}
+
+  <table class=" table-bordered table-sm table-striped table-hover">
+    <thead>
+      <tr class="bg-success">
+        <th style="width:10%">Order ID</th>
+          <th style="width:20%">Price</th>
+        <th style="width:20%">Status</th>
+        <th style="width:20%">Time</th>
+        <th style="width:50%">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for hotel_orders_object in hotel_orders_objects %}
+      <tr >
+            <td >{{hotel_orders_object.order.id }}  </td>
+            <td> {{hotel_orders_object.order.amount }}  &#8377</td>
+            <td> {{hotel_orders_object.order.status }} </td>
+            <td> {{hotel_orders_object.order.time }} </td>
+
+          {% if hotel_orders_object.order.status == 'Pending' %}
+            <td>
+                <a href="/app/hotel/order/accept/{{hotel_orders_object.order.id }}" type="button" class="btn btn-success" role="button">Confirm</a>
+
+                <a href="/app/hotel/order/cancel/{{hotel_orders_object.order.id }}" type="button" class="btn btn-danger" role="button">Cancel</a>
+            </td>
+
+          {% elif hotel_orders_object.order.status == 'Complete' %}
+                <td><mark> Order Completed </mark></td>
+
+          {% elif hotel_orders_object.order.status == 'Cancelled' %}
+                 <td><mark> Order Cancelled</mark></td>
+          {% endif  %}
+
+
+      </tr>
+    {% endfor %}
+    </tbody>
+
+  </table>
+    {% else %}
+
+    <h4>You dont any orders till now...</h4>
+    {% endif %}
+
+</div>
+
+
+
+
+<!--<br><br><br>-->
+<!--{{hotelobject.__dict__ }}-->
+
+
+
+
+
+</body>
+</html>

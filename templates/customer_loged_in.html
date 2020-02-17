@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <title>Welcome {% if customerobject %} {{customerobject.name}} {% endif %}</title>
+
+<style>
+.blinking{
+    animation:blinkingText 0.8s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+
+.vertical-menu {
+  width: 200px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+
+</head>
+<body>
+
+<h1 align="center">Welcome {{customerobject.name}} ...</h1>
+
+<!--alert when user update profile  -->
+{% if flag== 'update' or flag=='account_added' %}
+<div class="form-group">
+<div class="alert alert-success  col-md-4">
+  <label class="col-md-12 control-label"> <strong>{{msg}}</strong></label>
+</div>
+</div>
+{% endif %}
+
+
+{% if flag=='add_bank' %}
+<div class="form-group">
+<div class="alert alert-warning  col-md-4">
+  <label class="col-md-12 control-label"> <strong>{{msg}}</strong></label>
+</div>
+</div>
+{% endif %}
+
+
+<div class="vertical-menu">
+  <a href="#" class="active">Home</a>
+  <a href="/app/customer/edit/{{customerobject.id}}">Profile</a>
+
+    {% if account  %}
+  <a href="/app/customer/account/{{customerobject.id}}">Edit Bank Details</a>
+    {% else %}
+        {% if flag=='add_bank' %}
+  <a href="/app/customer/account/{{customerobject.id}}"><span class="blinking">Add Bank Details</span></a>
+        {% else %}
+  <a href="/app/customer/account/{{customerobject.id}}">Add Bank Details</a>
+        {% endif %}
+   {% endif %}
+
+
+  <a href="/app/customer/order/{{customerobject.id}}">Place a order </a>
+  <a href="/app/customer/order_history/{{customerobject.id}}"> Order History </a>
+  <a href="/app/customer/logout/{{customerobject.name}}">Log out</a>
+</div>
+
+
+
+
+</body>
+</html>
+

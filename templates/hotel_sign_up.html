@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Hotel Sign up</title>
+</head>
+<body>
+
+
+
+
+{% set BASE_URL = 'http://localhost:5000' %}
+
+
+
+<form class="form-horizontal" action="{{BASE_URL}}/app/hotel/save/" method="post">
+<fieldset>
+
+
+
+
+
+<!-- Form Name -->
+<legend align="center">Fill up details for Create account</legend>
+
+<!-- Text input ID-->
+<!--<div class="form-group">-->
+<!--  <label class="col-md-2 control-label" for="textinput">ID</label>-->
+<!--  <div class="col-md-2">-->
+<!--  <input id="textinput" name="hid" type="text" placeholder="Enter Your ID"-->
+<!--         class="form-control input-md" required="">-->
+
+<!--  </div>-->
+<!--</div>-->
+
+<!-- Text input Name-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Name</label>
+  <div class="col-md-2">
+  <input id="textinput" name="hname" type="text" placeholder="Enter Hotel Name"
+         class="form-control input-md" required="">
+
+  </div>
+</div>
+
+<!-- Text input Address-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Address</label>
+  <div class="col-md-2">
+  <input id="textinput" name="haddress" type="text" placeholder="Enter Address"
+         class="form-control input-md" required="">
+
+  </div>
+</div>
+
+
+
+ <!-- Select speciality of hotel -->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="selectbasic">Speciality</label>
+  <div class="col-md-2">
+    <select id="selectbasic" name="hspeciality" class="form-control">
+        {%for speciality in speciality_list %}
+        <option value="{{speciality}}">{{speciality}}</option>
+        {% endfor %}
+    </select>
+  </div>
+</div>
+
+<!-- Text input Mobile no with +91-->
+<div class="form-group">
+    <label class="col-md-2 control-label" for="textinput">Mobile no</label>
+    <div class="input-group col-md-2">
+    <span class="input-group-addon" id="sizing-addon2">+91</span>
+    <input type="text" name="hmobileno" class="form-control input-md" placeholder="Enter Mobile no"
+           aria-describedby="sizing-addon2" maxlength="10" minlength="10" required="">
+    </div>
+</div>
+
+<!-- Text input Email-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Email</label>
+  <div class="col-md-2">
+  <input id="textinput" name="hemail" type="text" minlength="6"
+         placeholder="Enter Email ID" class="form-control input-md" required="">
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- Password input password-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="passwordinput">Password </label>
+  <div class="col-md-2">
+    <input id="password" name="hpassword1" minlength="6" maxlength="6" type="password"
+           placeholder="Create Your Password" class="form-control input-md"
+            required="">
+    <span class="help-block">length must be exact 6 digit</span>
+  </div>
+</div>
+
+<!-- Password input comfirm password-->
+<div class="form-group">
+  <label class="control-label col-md-2 " for="passwordinput">Confirm Password </label>
+  <div class="col-md-2">
+    <input id="confirm_password" name="hpassword2" minlength="6" maxlength="6" type="password"
+           placeholder="Confirm Your Password" class="form-control input-md"
+           onkeyup='check();' required="">
+     <span id='message'></span>
+  </div>
+</div>
+
+
+<!-- script for password match -->
+<script>
+   var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'Password Match...';
+    document.getElementById('submit').disabled = false;
+
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'Password Dont Match...';
+    document.getElementById('submit').disabled = true;
+  }
+}
+</script>
+
+
+
+
+
+
+<!-- Button sign up-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="singlebutton"></label>
+  <div class="col-md-2">
+    <button id="submit" name="hotel_signup" class="btn btn-primary">Sign up</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+</body>
+</html>

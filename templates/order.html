@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>{{customerobject.name}}'s Order</title>
+</head>
+<body>
+{% set BASE_URL = 'http://localhost:5000' %}
+
+<form class="form-horizontal" action="{{BASE_URL}}/app/hotel/order/menu/" method="post">
+  <input type="hidden" name ='cid' value="{{customerobject.id}}">
+
+<h3 align="center">Order page</h3>
+
+ <!-- Select hotel for order -->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="selectbasic">Select Hotel</label>
+  <div class="col-md-2">
+    <select id="selecthotel" name="hotelnames" class="form-control" onchange="get_hotelid()"  >
+        <option value="" selected disabled hidden>Choose here</option>
+        {%for hotel in hotels %}
+        <option   value="{{hotel.id}}">{{hotel.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+</div>
+
+
+<!-- Button show menu-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="singlebutton"> </label>
+  <div class="col-md-2">
+       <button id="button1id" name="showmenu" class="btn btn-primary">Show menus</button>
+  </div>
+</div>
+
+
+
+</form>
+
+
+
+
+</body>
+</html>

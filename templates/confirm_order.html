@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+     <title>Confirm Order</title>
+</head>
+<body>
+{% set BASE_URL = 'http://localhost:5000' %}
+
+<form class="form-horizontal" action="{{BASE_URL}}/app/customer/hotel/order_placed/" method="post">
+
+ <input type="hidden" name ='hotelid' value="{{hid}}">
+ <input type="hidden" name ='customerid' value="{{cid}}">
+
+
+     <br><h4 align="center" >Confirm your order</h4><br><br>
+<div class="container">
+  <table class="  table-bordered table-sm table-striped table-hover">
+     <thead>
+      <tr class="bg-success">
+        <th >Menu Name : Price</th>
+        <th >Quantity</th>
+        <th >Amount</th>
+      </tr>
+    </thead>
+
+     <tbody>
+     {% for i in  menuid_quantity_dict.items() %}
+        {% if i[1]>0 %}
+        {% set c= loop.index %}
+      <input type="hidden" name ='menuids' value="{{hotelmenu_object_list[c-1].menu.id}}">
+          <tr >
+            <td> {{hotelmenu_object_list[c-1].menu.name}} : {{hotelmenu_object_list[c-1].menu.price}}&#8377</td>
+            <td> {{i[1]}}  </td>
+            <td> {{hotelmenu_object_list[c-1].menu.price}}&#8377 * {{i[1]}} = {{hotelmenu_object_list[c-1].menu.price * i[1]}} &#8377 </td>
+          </tr>
+        {% endif %}
+    {% endfor  %}
+    </tbody>
+
+  </table>
+</div>
+
+
+    <!-- Text input for total amount-->
+<div class="form-group">
+  <label class="col-md-10 control-label" for="textinput">Total Amount</label>
+  <div class="col-md-1">
+  <input id="total" readonly name="totalamount" type="text"  value="{{total}}&#8377" class="form-control input-md">
+  </div>
+</div>
+
+
+    {% if customer_account_balance > total %}
+
+<!-- Button for confirm place order -->
+<div class="form-group">
+  <div class="col-md-8">
+    <label class="col-md-2 control-label" for="textinput">  </label>
+   <button id="singlebutton" name="placeorder" class="btn btn-success">Place order</button>
+  </div>
+</div>
+
+    <h5>Note : Once order placed cannot be cancelled</h5>
+
+    {% else %}
+    <!-- Button for confirm place order -->
+<div class="form-group">
+  <div class="col-md-8">
+    <label class="col-md-2 control-label" for="textinput">  </label>
+   <button  disabled class="btn btn-success">Place order</button>
+  </div>
+</div>
+
+  <div class="alert alert-danger">
+    <strong> Sorry, your account balance is lower than total bill amount, Please refill your account... </strong>
+  </div>
+
+    {% endif %}
+
+
+
+
+
+</form>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Hotel</title>
+</head>
+<body>
+
+
+
+
+
+{% set BASE_URL = 'http://localhost:5000' %}
+
+<br><br>
+<form class="form-horizontal" action="{{BASE_URL}}/app/hotel/log_in/" method="post">
+<fieldset  >
+
+<!-- Form Name -->
+<legend align="center" >Hotel Log In To CLC FOOD STATION</legend><br><br>
+
+{% if flag=='signup'  %}
+<div class="form-group">
+<div class="alert alert-success  col-md-8">
+  <label class="col-md-12 control-label"> <strong>{{notification}}</strong></label>
+</div>
+</div>
+{% endif %}
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="textinput">Enter User ID</label>
+  <div class="col-md-2">
+  <input id="textinput" name="huserid" type="text" placeholder="Email id or Mobile no" class="form-control input-md" required="">
+
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="passwordinput">Password </label>
+  <div class="col-md-2">
+    <input id="passwordinput" name="hpassword" type="password" placeholder="Enter your password" class="form-control input-md" required="">
+
+  </div>
+</div>
+
+<!--alert for wrong credentials  -->
+{% if msg  %}
+<div class="form-group">
+<div class="alert alert-danger  col-md-8">
+  <label class="col-md-12 control-label"> <strong>{{msg}}</strong></label>
+
+</div>
+</div>
+{% endif %}
+
+
+<!-- Button (Double) -->
+<div class="form-group">
+  <label class="col-md-2 control-label" for="button1id"></label>
+  <div class="col-md-4">
+    <button id="button1id" name="button1id" class="btn btn-primary">Log in</button>
+    <a href="/app/hotel/sign_up/" id="button2id" class="btn btn-primary"
+                                role="button" name="button2id">Create an account</a>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

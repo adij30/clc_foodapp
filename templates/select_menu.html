@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Select Menu</title>
+
+    <!-- this css is for add and minus button-->
+    <style>
+
+    .qty .count {
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 0 2px
+    ;min-width: 35px;
+    text-align: center;
+}
+.qty .plus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    }
+.qty .minus {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font: 30px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+div {
+    text-align: center;
+}
+.minus:hover{
+    background-color: #717fe0 !important;
+}
+.plus:hover{
+    background-color: #717fe0 !important;
+}
+/*Prevent text selection*/
+span{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+input{
+    border: 0;
+    width: 2%;
+}
+nput::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input:disabled{
+    background-color:white;
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+<h4 align="center" >Please select your order </h4><br>
+{% set BASE_URL = 'http://localhost:5000' %}
+
+
+<form class="form-horizontal" action="{{BASE_URL}}/app/customer/confirm_order/" method="post">
+   <input type="hidden" name ='hotelid' value="{{hid}}">
+   <input type="hidden" name ='customerid' value="{{cid}}">
+
+
+
+
+
+
+
+<div class="container">
+  <table class="  table-bordered table-sm table-striped table-hover">
+    <thead>
+      <tr class="bg-success">
+        <th style="width:10%">Menu Id</th>
+        <th style="width:20%">Name</th>
+        <th style="width:20%">Price</th>
+        <th style="width:40%">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% if active_menu_list %}
+      {% for hotelmenu in active_menu_list %}
+
+     <!-- here menu is backref on hotelmenu table-->
+      <tr >
+        <td>{{hotelmenu.menu.id}} </td>
+        <td> {{hotelmenu.menu.name}}</td>
+        <td id="price"> {{hotelmenu.menu.price}} &#8377 </td>
+        <td>
+            <div id="input_div">
+                <input type="button" value="-"  class="btn btn-success"  onclick="minus({{hotelmenu.menu.id}});  ">
+                <input type="text" name ='{{hotelmenu.menu.id}}' style="width: 50px;" value="0" id="{{hotelmenu.menu.id}}">
+                <!-- here above we get menu id in name,we access them in order_placed() method -->
+                <input type="button" value="+"   class="btn btn-danger"  onclick="plus({{hotelmenu.menu.id}});  ">
+
+            </div>
+        </td>
+      </tr>
+     {% endfor %}
+      {% endif%}
+    </tbody>
+  </table>
+</div>
+
+
+<!--alert if not select any menu  -->
+{% if msg  %}
+<br><br><div class="form-group">
+  <div class="alert alert-danger  col-md-8">
+    <label class="col-md-12 control-label"> <strong>{{msg}}</strong></label>
+  </div>
+</div>
+{% endif %}
+
+
+<!-- Button for place order -->
+<br><br><div class="form-group">
+  <div class="col-md-12">
+    <button id="singlebutton" name="placeorder" class="btn btn-primary">Place order</button>
+  </div>
+</div>
+
+
+</form>
+
+<!-- javascript for increment and decrement-->
+<script>
+    function plus(a){
+    var count = document.getElementById(a).value;
+    var countEl = document.getElementById(a);
+        count++;
+        countEl.value = count;
+    }
+    function minus(b){
+    var count = document.getElementById(b).value;
+    var countEl = document.getElementById(b);
+      if (count > 0) {
+        count--;
+        countEl.value = count;
+      }
+    }
+
+
+</script>
+
+
+
+
+
+</body>
+</html>
