@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0deacc7c-47a5-448a-a4cb-edd267d758a8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start_food_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_food_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer_sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer_sign_up.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/hotel_sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hotel_sign_up.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,14 +37,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/customer_sign_up.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="158" column="25" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
+            <state relative-caret-position="320">
+              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="62" selection-end-column="6" />
               <folding>
                 <element signature="n#div#2;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#4;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#6;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/hotel_sign_up.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+              <folding>
                 <element signature="n#div#5;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#6;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -75,13 +86,13 @@
         <option value="$PROJECT_DIR$/templates/customer_edit.html" />
         <option value="$PROJECT_DIR$/templates/hotel_edit.html" />
         <option value="$PROJECT_DIR$/templates/hotel_log_in.html" />
-        <option value="$PROJECT_DIR$/templates/hotel_sign_up.html" />
         <option value="$PROJECT_DIR$/templates/menu.html" />
         <option value="$PROJECT_DIR$/templates/order.html" />
         <option value="$PROJECT_DIR$/templates/select_menu.html" />
         <option value="$PROJECT_DIR$/req.txt" />
         <option value="$PROJECT_DIR$/start_food_app.py" />
         <option value="$PROJECT_DIR$/templates/customer_sign_up.html" />
+        <option value="$PROJECT_DIR$/templates/hotel_sign_up.html" />
       </list>
     </option>
   </component>
@@ -176,13 +187,21 @@
       <option name="presentableId" value="Default" />
       <updated>1573080224601</updated>
     </task>
+    <task id="LOCAL-00001" summary="validations added for customer sign up page">
+      <created>1581941417232</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581941417232</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1875" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -219,6 +238,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="validations added for customer sign up page" />
+    <option name="LAST_COMMIT_MESSAGE" value="validations added for customer sign up page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/customer_order_controller.py">
@@ -319,13 +342,6 @@
         <state relative-caret-position="-2052" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hotel_sign_up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3036">
-          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/menu.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -404,11 +420,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/customer_sign_up.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="158" column="25" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
+        <state relative-caret-position="320">
+          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="62" selection-end-column="6" />
           <folding>
             <element signature="n#div#2;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#4;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#6;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hotel_sign_up.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="80" column="6" selection-start-line="80" selection-start-column="6" selection-end-line="80" selection-end-column="6" />
+          <folding>
             <element signature="n#div#5;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#6;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
           </folding>

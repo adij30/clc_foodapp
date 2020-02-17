@@ -73,18 +73,20 @@
     <label class="col-md-2 control-label" for="textinput">Mobile no</label>
     <div class="input-group col-md-2">
     <span class="input-group-addon" id="sizing-addon2">+91</span>
-    <input type="text" name="hmobileno" class="form-control input-md" placeholder="Enter Mobile no"
-           aria-describedby="sizing-addon2" maxlength="10" minlength="10" required="">
-    </div>
+    <input id="mobile" name="hmobileno" class="form-control input-md" placeholder="Enter Mobile no"
+           aria-describedby="sizing-addon2" maxlength="10" minlength="10" required="" onchange="ShowAlertMobile()">
+  </div>
+    <label class="col-md-2 control-label" for="textinput"></label>
+    <span id='mobile_message'></span>
 </div>
 
 <!-- Text input Email-->
 <div class="form-group">
   <label class="col-md-2 control-label" for="textinput">Email</label>
   <div class="col-md-2">
-  <input id="textinput" name="hemail" type="text" minlength="6"
-         placeholder="Enter Email ID" class="form-control input-md" required="">
-
+  <input id="email" name="hemail" type="text" minlength="6"
+         placeholder="Enter Email ID" class="form-control input-md" required="" onchange="ShowAlert()">
+    <span id='email_message'></span>
   </div>
 </div>
 
@@ -134,6 +136,47 @@
     document.getElementById('message').innerHTML = 'Password Dont Match...';
     document.getElementById('submit').disabled = true;
   }
+}
+
+
+
+<!-- script for mobileno  -->
+function ShowAlertMobile() {
+  var mobile = document.getElementById('mobile');
+  var filter = /^\d{10}$/;
+    if (!filter.test(mobile.value)) {
+        document.getElementById('mobile_message').style.color = 'red';
+        document.getElementById('mobile_message').innerHTML = 'Please provide a valid mobile number';
+        document.getElementById('submit').disabled = true;
+        email.focus;
+        return false;
+    }
+    else {
+    document.getElementById('mobile_message').style.color = 'green';
+    document.getElementById('mobile_message').innerHTML = '';
+    document.getElementById('submit').disabled = false;
+ }
+}
+
+
+
+
+<!-- script for email  -->
+function ShowAlert() {
+  var email = document.getElementById('email');
+  var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!filter.test(email.value)) {
+        document.getElementById('email_message').style.color = 'red';
+        document.getElementById('email_message').innerHTML = 'Please provide a valid email address';
+        document.getElementById('submit').disabled = true;
+        email.focus;
+        return false;
+    }
+    else {
+    document.getElementById('email_message').style.color = 'green';
+    document.getElementById('email_message').innerHTML = '';
+    document.getElementById('submit').disabled = false;
+ }
 }
 </script>
 
