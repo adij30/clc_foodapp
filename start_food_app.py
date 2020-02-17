@@ -6,7 +6,7 @@ from customer_order_controller import *
 from hotel_order_controller import *
 
 
-@app.route('/app/welcome/')
+@app.route('/')
 def start_page():
     return rt('welcome.html')
 

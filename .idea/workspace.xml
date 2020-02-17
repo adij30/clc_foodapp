@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0deacc7c-47a5-448a-a4cb-edd267d758a8" name="Default Changelist" comment="" />
+    <list default="true" id="0deacc7c-47a5-448a-a4cb-edd267d758a8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_food_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/start_food_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/customer_sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer_sign_up.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,11 +15,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/req.txt">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/start_food_app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="192">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -22,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="358">
               <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="e#128#189#0" expanded="true" />
@@ -31,7 +39,25 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/customer_sign_up.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="158" column="25" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
+              <folding>
+                <element signature="n#div#2;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#4;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#5;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#6;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -42,13 +68,11 @@
         <option value="$PROJECT_DIR$/hotel_controller.py" />
         <option value="$PROJECT_DIR$/hotel_order_controller.py" />
         <option value="$PROJECT_DIR$/menu_controller.py" />
-        <option value="$PROJECT_DIR$/start_food_app.py" />
         <option value="$PROJECT_DIR$/templates/welcome.html" />
         <option value="$PROJECT_DIR$/templates/customer_log_in.html" />
         <option value="$PROJECT_DIR$/templates/account.html" />
         <option value="$PROJECT_DIR$/templates/confirm_order.html" />
         <option value="$PROJECT_DIR$/templates/customer_edit.html" />
-        <option value="$PROJECT_DIR$/templates/customer_sign_up.html" />
         <option value="$PROJECT_DIR$/templates/hotel_edit.html" />
         <option value="$PROJECT_DIR$/templates/hotel_log_in.html" />
         <option value="$PROJECT_DIR$/templates/hotel_sign_up.html" />
@@ -56,14 +80,17 @@
         <option value="$PROJECT_DIR$/templates/order.html" />
         <option value="$PROJECT_DIR$/templates/select_menu.html" />
         <option value="$PROJECT_DIR$/req.txt" />
+        <option value="$PROJECT_DIR$/start_food_app.py" />
+        <option value="$PROJECT_DIR$/templates/customer_sign_up.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-13" />
-    <option name="width" value="913" />
-    <option name="height" value="735" />
+    <option name="width" value="1379" />
+    <option name="height" value="563" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -77,6 +104,11 @@
               <item name="food_app_for_remote_access" type="b2602c69:ProjectViewProjectNode" />
               <item name="food_app_for_remote_access" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="food_app_for_remote_access" type="b2602c69:ProjectViewProjectNode" />
+              <item name="food_app_for_remote_access" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -84,6 +116,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
@@ -149,12 +182,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1875" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28968903" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28968903" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -167,6 +200,25 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1875" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28968903" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33387887" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/customer_order_controller.py">
@@ -215,20 +267,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start_food_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1948">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/confirm_order.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1420">
@@ -254,13 +292,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1596">
           <caret line="9" column="24" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/customer_sign_up.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2268">
-          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -337,9 +368,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/req.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="358">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="e#128#189#0" expanded="true" />
@@ -347,10 +392,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/req.txt">
+    <entry file="file://$PROJECT_DIR$/start_food_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="192">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/customer_sign_up.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="158" column="25" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
+          <folding>
+            <element signature="n#div#2;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#6;n#fieldset#0;n#form#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
